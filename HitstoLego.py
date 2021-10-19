@@ -4,17 +4,7 @@
 # and returns .csv file of dimensions
 # ieta x iphi, with mapped hitE with 
 # converted to # of lego bricks per 
-# based on hitE.
-#
-# to-do:
-# -create criteria for # of lego bricks
-# based on hitE
-# -figure out how to input .txt file
-# -take .txt file and put into 2d list
-#    of floats (?) 
-# -nested for loop outputting commas/
-#    # of lego bricks,                 
-# -save output .csv file              
+# based on hitE.   
 ######################################
 
 def separate(array):
@@ -81,8 +71,8 @@ def maplego(array, isECAL):
 	legos = 0;
 	x = [[',' for i in range(eta)] for j in range(phi)]
 	for k in range(len(array)):
-		#x[int(iphi[k])-1][int(ieta[k])+offset] = str(colorgradiant(float(hitE[k]), isECAL))+","
-		x[int(iphi[k])-1][int(ieta[k])+offset] = ieta[k]+";"+iphi[k]+";"+hitE[k]+","
+		x[int(iphi[k])-1][int(ieta[k])+offset] = str(colorgradiant(float(hitE[k]), isECAL))+","
+		#x[int(iphi[k])-1][int(ieta[k])+offset] = ieta[k]+";"+iphi[k]+";"+hitE[k]+","
 		counter += 1
 		legos += colorgradiant(float(hitE[k]), isECAL)
 	print "Hits: " + str(counter)
